@@ -1,0 +1,12 @@
+body{
+  background-color: black;
+}
+
+p{
+  text-align: center;
+  color: #ffbf00;
+}
+
+#vid{
+  left: 50%;
+}
