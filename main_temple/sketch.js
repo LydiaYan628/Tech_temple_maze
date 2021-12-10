@@ -54,7 +54,7 @@ function preload() {
   img[5] = loadImage("images/06gallery.png");
   img[6] = loadImage("images/06gallery.png");
   img[7] = loadImage("images/07exit.png");
-  img[8] = loadImage("images/scene1.png");
+  img[8] = loadImage("images/01Entrance.png");
   // Load the model for 04MainEntrance
   classifier = ml5.soundClassifier(soundModel + 'model.json');
   let soundOptions = { probabilityThreshold: 0.95 };
@@ -133,7 +133,10 @@ function gotResult1(error, results) {
     poseLabel = results[0].label.toUpperCase();
     if (poseLabel == "L") {
       console.log("true");
-      //delayTime(3000);
+      if (snapshots.length < 1){
+          takesnap();
+          }
+
       setTimeout(function () {
           track = 2;
       }, 1000);
@@ -155,8 +158,11 @@ function gotResult2(error, results) {
     poseLabel = results[0].label.toUpperCase();
     //console.log(dictionary[track]);
     if (poseLabel == "R") {
-      console.log("true");
-      //delayTime(3000);
+      //console.log("Rtrue");
+      if (snapshots.length < 2){
+          takesnap();
+          }
+
       setTimeout(function () {
           track = 3;
       }, 3000);
@@ -205,7 +211,7 @@ function worship(){
     );
     console.log( leftWristAnkleDist);
     if (leftWristAnkleDist<50) {
-      if (snapshots.length < 1){
+      if (snapshots.length < 3){
           takesnap();
           }
       //console.log('ok');
@@ -291,7 +297,7 @@ function draw() {
   // } else {
   //   image(img[3], 0, 0, 640, 480);
   // }
-  text(poseLabel, width / 2, height / 2);
+  //text(poseLabel, width / 2, height / 2);
 
   if (hide == 0) {
   drawSkeleton();
@@ -359,19 +365,19 @@ function drawSkeleton() {
   pop();
 }
 
-function keyPressed() {
-  if (track < 8) {
-    track += 1;
-  } else {
-    track = 0;
-  }
-  console.log("key is pressed");
-}
-
-function mouseClicked(){
-  classifyPose();
-
-}
+// function keyPressed() {
+//   if (track < 8) {
+//     track += 1;
+//   } else {
+//     track = 0;
+//   }
+//   console.log("key is pressed");
+// }
+//
+// function mouseClicked(){
+//   classifyPose();
+//
+// }
 
 function pupilDetection() {
   ////Entrance pupil detection////
@@ -400,7 +406,7 @@ function takesnap(){
 
 function drawSnapshots(){
   for (var i = 0; i < snapshots.length; i++){
-  image(snapshots[i],width/2-200,height/2-200,400,400);
+  image(snapshots[i],width/2-100+(i-1)*200,height/2-100,200,200);
   }
   // var w = 80;
   // var h = 60;
