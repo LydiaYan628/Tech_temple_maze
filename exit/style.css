@@ -10,7 +10,9 @@ canvas {
   top: 100px;
   left:20px;
 }
-
+p{
+  font-family: 'Montserrat', sans-serif;
+}
 #hintBox{
   position:absolute;
   left:720px;
