@@ -2,11 +2,155 @@ body{
   background-color: black;
 }
 
+/* h1{
+  color: white
+} */
+
+svg {
+    display: block;
+    font: 5em 'Montserrat';
+    width: 960px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #FFBF00;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #FFBF00;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #FFBF00;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #FFBF00;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FFBF00;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
 p{
   text-align: center;
   color: #ffbf00;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin:100px;
 }
 
-#vid{
-  left: 50%;
+#videoBox{
+  text-align: center;
+  margin: 100px;
+}
+
+.buttonbox{
+  text-align: center;
+}
+button, button::after {
+  width: 380px;
+  height: 56px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #FFBF00 5%);
+  border: 0;
+  color: #000;
+  letter-spacing: 3px;
+  line-height: 48px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+}
+
+button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: 'TEMPLE ENTRANCE';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #FFBF00 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+button:hover::after {
+  animation: 0.5s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
 }

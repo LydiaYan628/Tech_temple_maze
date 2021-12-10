@@ -4,14 +4,43 @@
     <meta charset="utf-8">
     <title>Tech Temple Maze</title>
     <link rel="stylesheet" href="mainStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <p>Hello, welcome to the technology temple. <br></br>I am what you think I am, I am just how you think I am. <br></br>Come, and worship the technology god, <br></br>And I will deliver you from your misery and from your stupidity. </p>
-    <video id="vid" width = "800" height= "450" autoplay="autoplay" controls>
-      <source src="video/TechTempleMaze.mp4" type="video/mp4">
+    <!-- <h1>Technology Temple</h1> -->
+    <svg viewBox="0 0 960 300">
+    	<symbol id="s-text">
+    		<text text-anchor="middle" x="50%" y="80%">TECHNOLOGY TEMPLE</text>
+    	</symbol>
+
+    	<g class = "g-ants">
+    		<use xlink:href="#s-text" class="text-copy"></use>
+    		<use xlink:href="#s-text" class="text-copy"></use>
+    		<use xlink:href="#s-text" class="text-copy"></use>
+    		<use xlink:href="#s-text" class="text-copy"></use>
+    		<use xlink:href="#s-text" class="text-copy"></use>
+    	</g>
+    </svg>
+
+
+    <p class="txt anim-text-flow">Hello, welcome to the technology temple. <br><br>I am what you think I am, I am just how you think I am. <br><br>Come, and worship the technology god, <br><br>And I will deliver you from your misery and from your stupidity. </p>
+
+
+    <div id="videoBox"><video id="vid" width = "800" height= "450" autoplay="autoplay" controls>
+      <source src="video/TechTempleMaze.mp4" type="video/mp4"></div>
     </video>
 
-    <p>Ah! This is a place of technology, <br></br>a place where we worship the technology god. <br></br>This is the temple, the place where we worship him. <br></br>Come, and worship the technology god, <br></br>And I will deliver you from your misery.</p>
-    <a href="main_temple/index.html"><button type="button" name="button">TEMPLE ENTRANCE</button></a>
+    <p>Ah! This is a place of technology, <br><br>a place where we worship the technology god. <br><br>This is the temple, the place where we worship him. <br><br>Come, and worship the technology god, <br><br>And I will deliver you from your misery.</p>
+
+    
+    <div class="buttonbox">
+      <a href="main_temple/index.html"><button type="button" name="button">TEMPLE ENTRANCE</button></a>
+    </div>
+
+
+    <script src="sketch.js"></script>
   </body>
 </html>
